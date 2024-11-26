@@ -1,6 +1,32 @@
 # URL Shortener Service
 
-Este projeto é uma aplicação **serverless** em Java para encurtamento de URLs, utilizando os serviços da **AWS**.
+🌐 Como Funciona?
+
+Requisição para criação de URL encurtada: 
+Faça uma requisição HTTP POST para o endpoint:
+
+https://wnuvaq8gjj.execute-api.sa-east-1.amazonaws.com/create
+Corpo da requisição (JSON):
+{
+    "expirationTime": "TimeStamp em milissegundos",
+    "originalUrl": "https://exemplo.com/"
+}
+
+Resposta da API:
+A API retornará um identificador único (UUID) no seguinte formato:
+
+json
+{
+    "code": "8d1e2f34"
+}
+
+Acessando a URL encurtada:
+Anexe o código retornado ao final da URL base para acessar o link original:
+
+https://wnuvaq8gjj.execute-api.sa-east-1.amazonaws.com/8d1e2f34
+
+Ao acessar o link encurtado, você será redirecionado para a URL original configurada na requisição.
+
 
 ## 🚀 Tecnologias Utilizadas
 
